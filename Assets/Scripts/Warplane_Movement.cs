@@ -12,7 +12,7 @@ public class Warplane_Movement : MonoBehaviour
         
             }
 
-    // Update is called once per frame
+  
     void Update()
     {
       if(Input.GetKey(KeyCode.RightArrow)){

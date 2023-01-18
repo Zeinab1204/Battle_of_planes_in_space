@@ -15,6 +15,10 @@ public Transform Transform ;
    
     void Update()
     {
-   Transform.position -= new Vector3(0,speed * Time.deltaTime,0);
+   transform.position -= new Vector3(0,speed * Time.deltaTime,0);
+          if (transform.position.y <=-30)
+       {
+        Destroy(gameObject);
+       }
     }
 }
