@@ -17,13 +17,19 @@ public class Warplane_Movement : MonoBehaviour
     {
       if(Input.GetKey(KeyCode.RightArrow)){
         transform.position += new Vector3(speed * Time.deltaTime ,0,0);
-        transform.rotation=Quaternion.Lerp(transform.rotation,Quaternion.Euler(0,0,-10),rotationspeed*Time.deltaTime);
+        transform.rotation=Quaternion.Lerp(transform.rotation,Quaternion.Euler(0,0,-24),rotationspeed*Time.deltaTime);
       } 
       if(Input.GetKey(KeyCode.LeftArrow)){
         transform.position -= new Vector3(speed * Time.deltaTime ,0,0);
-        transform.rotation=Quaternion.Lerp(transform.rotation,Quaternion.Euler(0,0,10),rotationspeed*Time.deltaTime);
+        transform.rotation=Quaternion.Lerp(transform.rotation,Quaternion.Euler(0,0,40),rotationspeed*Time.deltaTime);
 
       }
+if(transform.rotation.z !=0){
+    transform.rotation=Quaternion.Lerp(transform.rotation,Quaternion.Euler(0,0,0),rotationspeed*Time.deltaTime);
+}
+
+
+
       if(transform.position.x < -2.17f) {
         transform.position = new Vector3(-2.17f,transform.position.y ,Transform.position.z);
       }
