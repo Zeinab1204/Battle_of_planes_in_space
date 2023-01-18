@@ -38,6 +38,11 @@ if(transform.rotation.z !=0){
       if(transform.position.x > 2.17f){
         transform.position = new Vector3(2.17f,transform .position.y,Transform.position.z);
       }
+      }
+      private void OnTriggerEnter2D(Collider2D collection){
+        Debug.Log("Oops, you hit it");
+        Debug.Log(collection.gameObject.name);
+      }
     }
     
-}
+
