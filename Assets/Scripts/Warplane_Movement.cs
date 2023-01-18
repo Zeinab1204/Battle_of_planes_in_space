@@ -15,10 +15,18 @@ public class Warplane_Movement : MonoBehaviour
     void Update()
     {
       if(Input.GetKey(KeyCode.RightArrow)){
-        Transform.position += new Vector3(speed * Time.deltaTime ,0,0);
+        transform.position += new Vector3(speed * Time.deltaTime ,0,0);
       }  
       if(Input.GetKey(KeyCode.LeftArrow)){
-        Transform.position -= new Vector3(speed * Time.deltaTime ,0,0);
+        transform.position -= new Vector3(speed * Time.deltaTime ,0,0);
+      }
+      if(transform.position.x < -2.17f) {
+        transform.position = new Vector3(-2.17f,transform.position.y ,Transform.position.z);
+      }
+
+      
+      if(transform.position.x > 2.17f){
+        transform.position = new Vector3(2.17f,transform .position.y,Transform.position.z);
       }
     }
     
