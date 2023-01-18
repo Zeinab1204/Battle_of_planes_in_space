@@ -6,6 +6,7 @@ public class Warplane_Movement : MonoBehaviour
 {
    public Transform Transform ;
    public float  speed = 0.1f ;
+   public float rotationspeed = 5f ;
     void Start()
     {
         
@@ -16,9 +17,12 @@ public class Warplane_Movement : MonoBehaviour
     {
       if(Input.GetKey(KeyCode.RightArrow)){
         transform.position += new Vector3(speed * Time.deltaTime ,0,0);
-      }  
+        transform.rotation=Quaternion.Lerp(transform.rotation,Quaternion.Euler(0,0,-10),rotationspeed*Time.deltaTime);
+      } 
       if(Input.GetKey(KeyCode.LeftArrow)){
         transform.position -= new Vector3(speed * Time.deltaTime ,0,0);
+        transform.rotation=Quaternion.Lerp(transform.rotation,Quaternion.Euler(0,0,10),rotationspeed*Time.deltaTime);
+
       }
       if(transform.position.x < -2.17f) {
         transform.position = new Vector3(-2.17f,transform.position.y ,Transform.position.z);
