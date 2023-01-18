@@ -40,8 +40,12 @@ if(transform.rotation.z !=0){
       }
       }
       private void OnTriggerEnter2D(Collider2D collection){
-        Debug.Log("Oops, you hit it");
+        if(collection.gameObject.tag == "meteors"){
+          Time.timeScale = 0;
+          Debug.Log("Oops, you hit it");
         Debug.Log(collection.gameObject.name);
+        }
+        
       }
     }
     
