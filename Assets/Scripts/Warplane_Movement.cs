@@ -9,9 +9,11 @@ public class Warplane_Movement : MonoBehaviour
    public float rotationspeed = 5f ;
    public score_Manager score_Value ;
    public GameObject GameOverPanel;
+   public AudioSource CoinSound;
     void Start()
     {
      GameOverPanel.SetActive(false);  
+     Time.timeScale = 1;
      }
 
   
@@ -50,6 +52,7 @@ if(transform.rotation.z !=0){
         }
          if(collection.gameObject.tag == "Coin"){
           Destroy(collection.gameObject);
+          CoinSound.Play();
           score_Value.Score +=10;
           Debug.Log("Very good");
             

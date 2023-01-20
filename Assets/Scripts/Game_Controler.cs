@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Game_Controler : MonoBehaviour
 {
@@ -26,5 +27,8 @@ public class Game_Controler : MonoBehaviour
 
         highScoreText.text ="high Score:" + highScore.ToString();
         scoreText.text="Your Score" + Score.ToString(); 
+    }
+   public void Restart(){
+        SceneManager.LoadScene("Game");
     }
 }
