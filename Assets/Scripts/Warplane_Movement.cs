@@ -7,6 +7,8 @@ public class Warplane_Movement : MonoBehaviour
    public Transform Transform ;
    public float  speed = 0.1f ;
    public float rotationspeed = 5f ;
+   public score_Manager score_Value ;
+
     void Start()
     {
         
@@ -45,9 +47,13 @@ if(transform.rotation.z !=0){
           Debug.Log("Oops, you hit it");
         Debug.Log(collection.gameObject.name);
         }
-             
+         if(collection.gameObject.tag == "Coin"){
+          Destroy(collection.gameObject);
+          score_Value.Score +=10;
+          Debug.Log("Very good");
+            
         
-      
+         }
       }
 }
     
