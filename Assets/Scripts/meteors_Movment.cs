@@ -19,6 +19,8 @@ public Transform Transform ;
           if (transform.position.y <=-30)
        {
         Destroy(gameObject);
+        
        }
+
     }
 }

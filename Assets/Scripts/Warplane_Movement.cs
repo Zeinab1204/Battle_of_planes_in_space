@@ -45,8 +45,10 @@ if(transform.rotation.z !=0){
           Debug.Log("Oops, you hit it");
         Debug.Log(collection.gameObject.name);
         }
+             
         
+      
       }
-    }
+}
     
 

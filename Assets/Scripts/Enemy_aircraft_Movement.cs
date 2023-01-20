@@ -5,7 +5,9 @@ using UnityEngine;
 public class Enemy_aircraft_Movement : MonoBehaviour
 {
 public Transform Transform ;
- public float speed = 2f ;
+ public float speed = 4f ;
+
+
 
     void Start()
     {
@@ -15,6 +17,13 @@ public Transform Transform ;
    
     void Update()
     {
-   Transform.position -= new Vector3(0,speed * Time.deltaTime,0);
-    }
-}
+   transform.position -= new Vector3(0,speed * Time.deltaTime,0);
+   if(transform.position.y <=-10){
+    Destroy(gameObject);
+   }
+      
+  }
+ }
+
+        
+       
