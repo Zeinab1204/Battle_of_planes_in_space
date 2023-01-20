@@ -2,19 +2,25 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class score_Manager : MonoBehaviour
 {
     public int Score = 0;
+    public int highScore;
+    public static int lastscore=0;
 
     public Text scoreText;
-    public int highScore;
+    public Text HighScoreText;
+    public Text lastScoreText;
 
     void Start()
     {
         StartCoroutine(score());
-        highScore = 0;
-        Debug.Log("High Score stored :" + PlayerPrefs.GetInt("high_score",highScore));
+        
+        highScore = PlayerPrefs.GetInt("high_score" ,0);
+        HighScoreText.text ="High Score:" + highScore.ToString();
+        lastScoreText.text ="Last Score:" + lastscore.ToString();
     }
 
     // Update is called once per frame
@@ -29,9 +35,14 @@ public class score_Manager : MonoBehaviour
 
     IEnumerator score(){
         while(true){
-            yield return new WaitForSeconds(3);
+            yield return new WaitForSeconds(2);
         Score = Score + 1 ;
-        Debug.Log("Score:" + Score);
+        lastscore = Score ;
+        
         }
+    }
+    IEnumerator Reload(){
+      yield return new WaitForSeconds(10);
+      SceneManager.LoadScene("Game");
     }
 }

@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5608517081486802444}
   - component: {fileID: 5608517081486802432}
   - component: {fileID: 5608517081486802433}
+  - component: {fileID: 2123351073357167003}
   m_Layer: 0
   m_Name: War plane 1
   m_TagString: Untagged
@@ -102,6 +103,7 @@ MonoBehaviour:
   Transform: {fileID: 5608517081486802446}
   speed: 2
   rotationspeed: 5
+  score_Value: {fileID: 0}
 --- !u!61 &5608517081486802432
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -149,3 +151,18 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &2123351073357167003
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5608517081486802445}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6717000b537c8a345b9e9b4c1789f44a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Score: 0
+  scoretext: {fileID: 0}
+  highScore: 0

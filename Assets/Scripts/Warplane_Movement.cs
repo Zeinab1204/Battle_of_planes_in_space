@@ -8,11 +8,11 @@ public class Warplane_Movement : MonoBehaviour
    public float  speed = 0.1f ;
    public float rotationspeed = 5f ;
    public score_Manager score_Value ;
-
+   public GameObject GameOverPanel;
     void Start()
     {
-        
-            }
+        GameOverPanel.SetActive(false);  
+     }
 
   
     void Update()
@@ -44,6 +44,7 @@ if(transform.rotation.z !=0){
       private void OnTriggerEnter2D(Collider2D collection){
         if(collection.gameObject.tag == "meteors"){
           Time.timeScale = 0;
+          GameOverPanel.SetActive(true);
           Debug.Log("Oops, you hit it");
         Debug.Log(collection.gameObject.name);
         }
