@@ -11,7 +11,7 @@ public class Warplane_Movement : MonoBehaviour
    public GameObject GameOverPanel;
     void Start()
     {
-        GameOverPanel.SetActive(false);  
+     GameOverPanel.SetActive(false);  
      }
 
   

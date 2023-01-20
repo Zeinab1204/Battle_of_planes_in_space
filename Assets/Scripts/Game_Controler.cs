@@ -5,11 +5,14 @@ using UnityEngine.UI;
 
 public class Game_Controler : MonoBehaviour
 {
-    public Text HighScoreText ;
+    public Text highScoreText ;
     public Text scoreText;
+
     public int Score;
     public int highScore;
+
     public score_Manager score_manager;
+
     void Start()
     {
         
@@ -21,7 +24,7 @@ public class Game_Controler : MonoBehaviour
         highScore = PlayerPrefs.GetInt("high_score");
         Score = score_manager.Score;
 
-        HighScoreText.text =highScore.ToString();
-        scoreText.text=Score.ToString(); 
+        highScoreText.text ="high Score:" + highScore.ToString();
+        scoreText.text="Your Score" + Score.ToString(); 
     }
 }
